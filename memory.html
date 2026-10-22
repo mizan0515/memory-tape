@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="명조 3장 5막의 장면에서, 카세트 안쪽으로. Gaussian 장면과 하나의 3D 카세트가 이어지는 CVA Memory Tape."><meta name="referrer" content="origin"><title>어젯밤의 뭇별들 — MEMORY TAPE × CVA</title><link rel="icon" href="data:,"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="memory.css"><link rel="stylesheet" href="memory-cinematic/overlay.css"><link rel="stylesheet" href="memory-cinematic/startup.css"><script src="memory-cinematic/startup.js"></script></head><body>
+<div id="elio-memory-reader">
+<header class="memory-reader-nav"><a href="index.html"><b>CVA</b> <span>MEMORY TAPE</span></a><nav aria-label="제작 사례"><a href="#principles">제작 원리</a><a href="#sources">소스·출처</a></nav></header>
+<main class="memory-reader"><section class="memory-reader-intro"><p class="memory-kicker">명조 · 제3장 제5막 / DESIGN ENGINEERING STUDY</p><h1>장면을 따라,<br>기억의 안쪽으로.</h1><p>주변의 공간이 물러나도 손에 쥔 카세트는 남습니다.<br>같은 물건을 따라 관람에서 읽기로 이어지는 인터랙션.</p><a href="https://mizan0515.github.io/memory-tape/" target="_blank" rel="noreferrer">공개 실행본 ↗</a></section>
+<figure class="memory-real-frame"><img data-memory-asset="approach_0000" alt="에이메스가 방랑자에게 카세트를 건네는 원본 Gaussian 장면의 사전 렌더 프레임" decoding="async"><figcaption>실제 렌더 자산 · GS의 공간과 한 개의 rigid 카세트 모델을 같은 카메라로.</figcaption></figure>
+<section class="memory-reader-section" id="principles"><p class="memory-kicker">01 / IDENTITY BEFORE EFFECTS</p><h2>다른 화면에서도,<br>같은 물건으로 보이게.</h2><p>카세트의 점을 제외한 Gaussian 장면 위에 보완한 GLB를 처음부터 유지합니다. 배경이 물러날 때 물건이 교체되거나 두 겹으로 보이지 않도록, 위치·방향·재질과 릴의 앵커를 함께 맞췄습니다.</p><p>후면과 두께는 제공된 모델을 바탕으로 보완한 팬 시각 근사입니다. 실제 게임의 원본 모델이나 새 Gaussian 학습 결과로 소개하지 않습니다.</p></section>
+<figure class="memory-real-frame memory-close-frame"><img data-memory-asset="approach_0133" alt="주변 장면이 물러난 뒤에도 같은 자세로 남아 있는 3D 카세트의 접근 프레임" loading="lazy" decoding="async"><figcaption>선명한 물건과 주변 공간의 역할을 분리합니다. 캡처 프레임의 실제 카메라 자세·윤곽을 함께 사용합니다.</figcaption></figure>
+<section class="memory-reader-section"><p class="memory-kicker">02 / CAMERA, MASK, LIGHT</p><h2>움직임은 시선을 잇고,<br>빛은 표면을 남깁니다.</h2><p>현재 자세에서 시작하는 카메라와 같은 진행을 쓰는 회전·거리, 실제 투영 윤곽을 따라 열리는 마스크, 물건 내부를 잘라낸 바깥 글로우를 연결했습니다. 카메라의 도착과 문장을 읽는 시간, 읽기 조작권을 돌려주는 시간은 따로 설계했습니다.</p><p>장면 다시 보기에서 직접 접근하거나, ‘제작 노트 읽기’를 눌러 현재 시점에서 전환해 보세요. Esc는 즉시 본문으로 돌아옵니다. 위로 스크롤하면 접근을 되감습니다.</p></section>
+<section class="memory-reader-section memory-render-note"><p class="memory-kicker">03 / ADAPTIVE PLAYBACK</p><h2>가속이 없어도,<br>같은 장면의 흐름을.</h2><p>가속 가능한 환경에서는 실시간 GS·GLB를, 소프트웨어 환경에서는 같은 카메라로 미리 만든 AVIF 프레임을 Canvas 2D에 표시합니다. 마스크·빛은 요청 위치가 아니라 실제 표시한 프레임의 윤곽에 맞춥니다.</p><dl><div><dt>궤도 캡처</dt><dd>240장 / 16초<small>15개의 고유 이미지/초</small></dd></div><div><dt>초기 접근</dt><dd>181장<small>정·역방향 접근 경로</small></dd></div><div><dt>디코딩 캐시</dt><dd>4장<small>압축 바이트와 별도 관리</small></dd></div></dl><p>이미지 재생은 자유 시점 3D 회전을 제공하지 않습니다. AVIF Q50은 손실 WebP Q90에서 변환한 자료입니다. RAF 호출 수와 원본 프레임 수를 구분합니다.</p></section>
+<section class="memory-reader-section" id="sources"><p class="memory-kicker">SOURCE / LEARN / ADAPT</p><h2>같은 시스템으로,<br>다음 장면을 만듭니다.</h2><p>이 페이지는 실제 Memory Tape 렌더러·카메라·전환을 사용하는 예시입니다. 대상과 카메라를 설명용 CSS 모형으로 대체하지 않습니다. 새로운 주제에서는 대상의 정체성·원인 변수·입력 권한의 계약을 유지하고 구도·재질·문장·시간을 다시 정합니다.</p><div class="memory-doc-links"><a href="README.md">실행·수정 안내 ↗</a><a href="README.md#principles">제작 원리와 한계 ↗</a><a href="https://github.com/mizan0515/memory-tape">소스·데이터 저장소 ↗</a><a href="memory-scene/SOURCE-ATTRIBUTION.txt">장면·모델·프레임 출처 ↗</a><a href="memory-scene/THIRD_PARTY_NOTICES.txt">소프트웨어 고지 ↗</a></div><p class="memory-credit">명조: 워더링 웨이브 시각 자료 © KURO GAMES. 비공식 팬 시각 실험. 원작 mizan0515 / Memory Tape. 큰 장면·모델·프레임은 공개 저장소의 고정 버전에서 읽으며 인터넷 연결이 필요합니다.</p></section>
+</main><footer class="memory-reader-footer"><a href="index.html">Memory Tape 처음으로 ↗</a><a href="https://github.com/mizan0515/memory-tape" target="_blank" rel="noreferrer">소스와 데이터 ↗</a></footer></div>
+<dialog id="elio-memory" class="elio-memory" aria-labelledby="elio-memory-title" data-mode="intro" data-state="loading" data-transition="standard" tabindex="-1" hidden>
+  <div class="elio-memory__inverse-backdrop" aria-hidden="true"></div>
+  <div class="elio-memory__watch-light" aria-hidden="true"></div>
+  <iframe id="elio-memory-scene" class="elio-memory__scene" title="에이메스가 건넨 테이프. 아래로 스크롤해 다가가고, 드래그로 회전합니다." tabindex="0" loading="eager"></iframe>
+  <div class="elio-memory__grain" aria-hidden="true"></div>
+  <span class="elio-memory__wordmark" aria-hidden="true">CVA <span>· MEMORY TAPE</span></span>
+  <div class="elio-memory__type" aria-hidden="true">
+    <p class="elio-memory__eyebrow">명조: 워더링 웨이브 <span>제3장 제5막</span></p>
+    <h1 id="elio-memory-title"><span>어젯밤의</span><span>뭇별들</span></h1>
+  </div>
+  <p class="elio-memory__near" aria-hidden="true"><span>알 수 없는 경계에 닿기 위해서</span><span>이 별바다 아래로 온 거 아닌가요?</span></p>
+  <div class="elio-memory__watch" aria-hidden="true">
+    <p class="elio-memory__eyebrow">같은 장면, 다른 시선</p>
+    <strong id="elio-memory-streamer"></strong>
+    <p id="elio-memory-time"></p>
+  </div>
+  <div id="elio-memory-moment" class="elio-memory__moment" aria-hidden="true" hidden>
+    <p id="elio-memory-moment-kind" class="elio-memory__eyebrow"></p>
+    <p id="elio-memory-quote" class="elio-memory__quote"></p>
+  </div>
+  <p id="elio-memory-status" class="elio-memory__status" role="status" aria-live="polite">테이프에 남은 장면을 불러오고 있어요.</p>
+  <div id="elio-memory-help" class="elio-memory__help">
+    <div class="elio-memory__gestures">
+      <span><svg class="elio-memory__arrow elio-memory__desktop-hint" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v17m-6-6 6 6 6-6"/></svg><svg class="elio-memory__touch-hint" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-5-5m0 5V3h5m8 13 5 5m0-5v5h-5M9 14l5-5"/><circle cx="9" cy="14" r="2"/><circle cx="14" cy="9" r="2"/></svg><span class="elio-memory__desktop-hint">아래로 스크롤</span><span class="elio-memory__touch-hint">두 손가락으로 확대</span></span>
+      <span class="elio-memory__rotation-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 13V5a1.5 1.5 0 0 1 3 0v6-8a1.5 1.5 0 0 1 3 0v8-6a1.5 1.5 0 0 1 3 0v7-4a1.5 1.5 0 0 1 3 0v7c0 4-2 7-6 7h-2c-2 0-3-1-4-3l-4-6a1.5 1.5 0 0 1 2-2l2 2"/></svg>드래그로 회전</span>
+      <span class="elio-memory__film-touch-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16m-5-5 5 5 5-5M7 9l5-5 5 5"/></svg>위아래로 쓸어 다가가기</span>
+    </div>
+    <button type="button" id="elio-memory-read">제작 노트 읽기 <span aria-hidden="true">↗</span></button>
+  </div>
+  <button type="button" id="elio-memory-info" class="elio-memory__info" aria-label="조작 안내 보기" aria-controls="elio-memory-help" aria-expanded="true" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></svg></button>
+  <a id="elio-memory-video" class="elio-memory__video" target="_blank" rel="noopener noreferrer" hidden>새 탭에서 영상 열기 ↗</a>
+  <button type="button" id="elio-memory-continue" class="elio-memory__continue" hidden>이 페이지 계속 읽기</button>
+</dialog>
+<div id="elio-memory-return" class="elio-memory-return" hidden>
+  <button type="button" id="elio-memory-reopen"><span aria-hidden="true">↶</span> 기억 장면 다시 보기</button>
+</div>
+<!-- Original scene and library credits remain in scene/SOURCE-ATTRIBUTION.txt and THIRD_PARTY_NOTICES.txt. -->
+<script type="module" src="memory-cinematic/bootstrap.js" data-memory-controller="true"></script><noscript><p class="memory-noscript">JavaScript 없이 제작 노트를 읽을 수 있습니다. 3D 조작에는 JavaScript와 인터넷 연결이 필요합니다.</p></noscript></body></html>

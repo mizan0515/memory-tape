@@ -1,0 +1,5 @@
+* text=auto
+*.spz binary
+*.glb binary
+*.avif binary
+*.woff2 binary
