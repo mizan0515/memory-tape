@@ -1,0 +1,13 @@
+MEMORY TAPE — CURRENT PUBLIC ASSETS
+
+Original scene and experience: mizan0515, https://github.com/mizan0515/memory-tape
+Game imagery: Wuthering Waves (명조), © KURO GAMES. Unofficial fan visual study.
+Game imagery and custom supplied models are not covered by the software MIT notices.
+
+Current derived scene removes the cassette points while retaining the surrounding Gaussian scene. The rigid cassette GLB is refined from the supplied model. Back and side surfaces are visual approximations; this is not an official extracted game model or a new Gaussian training result.
+
+GPU captures share the live camera: 181 approach frames and 240 orbit frames over 16 seconds (15 distinct orbit images per second). The 3414x1440 and 2560x1080 AVIF variants derive from already-lossy WebP Q90; AVIF quality50 is not a lossless master. Runtime RAF frequency is not source image FPS.
+
+The same rigid object, projected hull, exterior halo with protected interior, separate presentation/input handoff clocks and bounded frame caches are reused in the current public example and CVA adaptation.
+
+Three.js 0.180.0 and Spark 2.4.0 retain their separate notices in THIRD_PARTY_NOTICES.txt.
