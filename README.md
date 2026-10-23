@@ -33,3 +33,7 @@ http://127.0.0.1:8877/ 에서 엽니다. Three.js0.180.0과 Spark2.4.0은 공식
 접근181장+궤도240장/16초이며 궤도는15개의 고유 이미지/초입니다. RAF60Hz를60fps 소스로 표현하지 않습니다. AVIF Q50은 손실 WebP Q90에서 만든 파생물입니다. 코덱의 quality 숫자는 같은 척도가 아닙니다. 이미지 경로에는 자유 시점 회전이 없습니다.
 
 후면·두께는 제공 모델을 보완한 시각적 근사입니다. 실제 게임 모델이나 새로운 Gaussian 학습 결과가 아닙니다. 명조 시각 자료 © KURO GAMES. 소프트웨어 고지는 THIRD_PARTY_NOTICES.txt, 자산 출처는 memory-scene/SOURCE-ATTRIBUTION.txt를 따릅니다.
+
+## 상세 제작 기록
+
+[웹 제작 포트폴리오](memory.html#reconstruction)는 실제 입력 이미지에서 SHARP Gaussian·초기 TripoSR mesh·후속 제공 모델 보완·카메라·현재 윤곽 마스크·halo·GPU 캡처·Canvas2D 재생·읽기 조작권의 개선까지 보여 줍니다. [공통 원리](docs/CINEMATIC_PRINCIPLES.md), [전체 사례](docs/MEMORY_TAPE_CASE_STUDY.md), [DESIGN.md 작성 템플릿](docs/DESIGN_TEMPLATE.md)을 함께 제공합니다. 초기 생성·후속 정련·이번 채택은 별도 단계이며 기록된 추론을 이번에 재실행한 것으로 소개하지 않습니다.
