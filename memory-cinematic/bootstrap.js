@@ -13,12 +13,19 @@ try {
   poster.src = assetUrl('approach_0000');
   document.getElementById('elio-memory-scene').after(poster);
   document.querySelectorAll('[data-memory-asset]').forEach(image => { image.src = assetUrl(image.dataset.memoryAsset); });
-  const root = location.pathname.includes('/source/tools/cva_design_system/')
-    ? new URL('../../../../', location.href) : new URL('../../', location.href);
+  document.querySelectorAll('[data-memory-download]').forEach(link => { link.href = assetUrl(link.dataset.memoryDownload); });
+  // Making-of inputs stay with the explicitly published media, outside the CVA ZIP.
+  const makingBase = new URL('../making-assets/', import.meta.url);
+  document.querySelectorAll('[data-memory-making]').forEach(image => {
+    image.src = new URL(image.dataset.memoryMaking, makingBase).href;
+  });
   document.querySelectorAll('[data-cva-doc]').forEach(link => {
-    link.href = new URL('source/docs/design/cva-design-system/' + link.dataset.cvaDoc, root).href;
+    link.href = new URL('../docs/' + link.dataset.cvaDoc, import.meta.url).href;
   });
   await import('./overlay.js');
+  document.querySelectorAll('[data-reopen-memory]').forEach(button => {
+    button.addEventListener('click', () => document.getElementById('elio-memory-reopen').click());
+  });
 } catch (error) {
   window.ELIO_MEMORY_STARTUP?.();
   const notice = document.createElement('p');
